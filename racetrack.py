@@ -354,7 +354,7 @@ class Racetrack:
         """
         main method that runs the program
         """
-        
+
         os.system("cls") # clear the screen
         
         self.algorithms = {
@@ -506,7 +506,7 @@ class Racetrack:
         y = race.number_of_steps
         
         # create a figure
-        fig, ax = plt.subplots(figsize=(15,5))
+        figure, ax = plt.subplots(figsize=(15,5))
         ax.step(x, y, 
                  label=f"Crash policy:\n{self.crash_policy_name}")
         ax.plot(x, y, 'ro', alpha=0.5)
