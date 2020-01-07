@@ -10,7 +10,7 @@ class Racetrack:
     
     """ 
     A class that implements a reinforcement learning and applying it to the racetrack problem. 
-    The class implements diiferent algorithms that solves the problem:
+    The class implements different algorithms that solves the problem:
     1) Value Iteration
     2) Q-learning
     3) SARSA
@@ -83,7 +83,7 @@ class Racetrack:
             
     def within_track(self):
         """
-        function that checks if the current coordinates of the car are within the environment
+        method that checks if the current coordinates of the car are within the environment
         """
         if ((self.y>=self.track.shape[0] or self.x>=self.track.shape[1]) or 
             (self.y<0 or self.x<0)):
@@ -145,8 +145,6 @@ class Racetrack:
         
         """
         
-        open_cells = ".FS"
-        
         # return track to the nearest open cell
         if self.start_from == "nearest_position":
             # go back to the position before crash
@@ -203,12 +201,11 @@ class Racetrack:
         """
         method that implements Value iteration algorithm
         """
-        num_of_iterations = 50
         print("Algorithm: Value Iteration")
         print("Number of iterations:", self.episodes)
         print("\nProgress:\n")
         
-        # initialize a progress bar object  allows visuzalization of an computation 
+        # initialize a progress bar object that allows visuzalization of the computation 
         bar = pyprind.ProgBar(self.episodes) 
         
         for iteration in range(self.episodes):
@@ -272,7 +269,7 @@ class Racetrack:
             v_y = np.random.choice(self.velocities) 
             v_x = np.random.choice(self.velocities) 
 
-            for t in range(iter_per_episode):
+            for _ in range(iter_per_episode):
                 if self.track[y, x] == "F" or self.track[y, x] == "#": 
                     break
                    
@@ -378,9 +375,9 @@ class Racetrack:
         }
         
         self.iterations = {
-            "1": 50, 
-            "2": 4000000,
-            "3": 4000000,
+            "1": 40, 
+            "2": 3000000,
+            "3": 3000000,
         }
         
         # ask user for the reactrack
@@ -391,9 +388,10 @@ class Racetrack:
                                       "\n 3. O shaped track\n>>> ")
             if track_choice in self.tracks.keys():
                 break
-        os.system("cls")
+
+        os.system("cls") # clear the screen
         
-        # ask user what algorithm to implement
+        # ask user what algorithm to apply
         while True:
             self.algorithm = input("\nWhat algorithm to apply?\n 1. Value iteration " 
                                         +"\n 2. Q-learning \n 3. SARSA\n >>> ")
@@ -461,7 +459,7 @@ class Racetrack:
         """
         steps_track = []
         max_steps = 250 # maximum number of steps
-        for k in range(50):
+        for _ in range(50):
             self.start_position()
             self.v_y, self.v_x = (0, 0)
             steps = 0 
@@ -485,10 +483,10 @@ class Racetrack:
     def print_racetrack(self):
         """
         method that prints racetrack and current position of the car
-        the car is donoted by "X"
+        the car position is donoted by "X"
         """
         temp = self.track[self.y, self.x] # current racetrack cell
-        self.track[self.y, self.x] = 'X' # current position of the car
+        self.track[self.y, self.x] = 'X' # position of the car
         os.system("cls") # clear the screen
         # print the racetrack
         for row in self.track:
