@@ -12,6 +12,6 @@ Three different racetrack shapes will be considered: R-shaped track, O-shaped tr
 
 All the implemented algorithms (Q-learning, Value Iteration and Sarasa) were tested on an R-shaped racetrack and an O-shaped racetrack. Testing implemented algorithms includes monitoring the number of steps needed for the car to finish the race and the number of iterations taken to converge. Since we want to force the car to finish the race in the minimum number of steps, we assign a 'reward' of -1 for each move the car makes to another position. Further, we want to prevent the car from crashing into the wall so the 'reward' for crashin into a wall is set to negative value -10. Finally, reward function for the finish line is set to 0
 
-It has shown that all algorithms have successfully solved the problem. Value iteration algorithm performs better than other SARSA and Q-learning algorithms since it converges faster. Number of steps required to finish the race is greater for the second crash scenario (return to starting line) compared to the first crash scenario(return to nearest open cell). 
+It has shown that all algorithms have successfully solved the problem. Value iteration algorithm performs better than other SARSA and Q-learning algorithms since it converges faster. Number of steps required to finish the race is greater for the second crash scenario (return to starting line) compared to the first crash scenario(return to nearest open cell)
 
 
