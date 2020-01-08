@@ -1,6 +1,6 @@
 # Racetrack problem - Reinforcement learning
 
-In this assignment, four different algorithms are implemented in order to solve the racetrack problem. The racetrack problem is a standard control problem and the goal is to control the car so that it finishes the race (travels from the starting to the final position) in a minimum number of steps (i.e. in a minimum amount of time). Following algorithms have been implemented:
+In this assignment, three different algorithms are implemented in order to solve the racetrack problem. The racetrack problem is a standard control problem and the goal is to control the car so that it finishes the race (travels from the starting to the final position) in a minimum number of steps (i.e. in a minimum amount of time). Following algorithms have been implemented:
 
 1) Value iteration
 2) Q-learning
